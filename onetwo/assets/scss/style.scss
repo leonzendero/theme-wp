@@ -1,0 +1,631 @@
+@import "../fonts/stylesheet.css";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  margin-top: 96px;
+  margin-bottom: 18px;
+
+  &__text {
+    font-family: "TT Norms";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+
+/* Sample */
+
+.sample {
+  padding-top: 45px;
+  padding-bottom: 63px;
+  background: #EEEEEE;
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    @media screen and (max-width: 767px) {
+      margin: 30px;
+    }
+  }
+
+  &__circle {
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: #E31E25;
+
+    i {
+      color: #EEEEEE;
+    }
+  }
+
+  &__text {
+    font-family: "TT Norms";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1A18;
+  }
+
+  &__default {
+    background: #FFFFFF;
+    border-radius: 4px;
+    margin-right: 10px;
+    border: 1px solid #FFFFFF;
+
+    p {
+      margin: 10px;
+      font-family: "TT Norms";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      color: #1A1A18;
+
+      @media screen and (max-width: 991px) {
+        font-size: 9px;
+      }
+    }
+  }
+
+  &__hover {
+    background: #FFFFFF;
+    border-radius: 4px;
+    margin-right: 10px;
+    border: 1px solid #FFFFFF;
+    transition: 0.5s;
+
+    p {
+      margin: 10px;
+      font-family: "TT Norms";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      color: #1A1A18;
+
+      @media screen and (max-width: 991px) {
+        font-size: 9px;
+      }
+    }
+
+    &:hover {
+      background: #FCE8E9;
+      border: 1px solid #E31E25;
+    }
+  }
+
+  &__active {
+    white-space: nowrap;
+    background: #FFFFFF;
+    border-radius: 4px;
+    margin-right: 10px;
+    border: 1px solid #FFFFFF;
+    transition: 0.5s;
+
+    p {
+      margin: 10px;
+      font-family: "TT Norms";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      color: #1A1A18;
+
+      @media screen and (max-width: 991px) {
+        font-size: 9px;
+      }
+    }
+
+    &:hover {
+      background: #FCE8E9;
+      border: 1px solid #E31E25;
+    }
+
+    &:active {
+      background: #E31E25;
+      border: 1px solid #E31E25;
+    }
+  }
+}
+
+.active-button {
+  background: #E31E25 !important;
+  border: 1px solid #E31E25 !important;
+}
+
+.button {
+  margin-top: 57px;
+
+  &__items {
+    margin: 30px;
+    width: 150px;
+    height: 50px;
+    background: none;
+    border: 1px solid #E31E25;
+    border-radius: 4px;
+    outline: none;
+
+    font-family: "TT Norms";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #E31E25;
+
+    &:hover {
+      outline: none;
+    }
+
+    &:active, &:focus {
+      outline: none;
+    }
+
+    @media screen and (max-width: 575px) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__second {
+    margin: 30px;
+    width: 150px;
+    height: 50px;
+    background: none;
+    border: 1px solid #E31E25;
+    border-radius: 4px;
+    transition: 0.5s;
+    outline: none;
+
+    font-family: "TT Norms";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #E31E25;
+
+    &:hover {
+      color: white;
+      outline: none;
+      background: #E31E25;
+    }
+
+    &:active, &:focus {
+      outline: none;
+    }
+  }
+}
+
+/* Hit */
+
+.products {
+  margin-top: 80px;
+  margin-bottom: 30px;
+
+  &__name {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    @media screen and (max-width: 425px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__title {
+      margin-right: 20px;
+      font-family: "TT Norms";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 150%;
+      text-transform: uppercase;
+      color: #1A1A18;
+    }
+
+    &__text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 124px;
+      height: 28px;
+      background: #FEC022;
+      border: 1px solid #FEC022;
+      border-radius: 4px;
+      font-family: "TT Norms";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 150%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+  }
+}
+
+.bg {
+  padding-top: 30px;
+  padding-bottom: 36px;
+  background: url("../img/bg.png");
+  background-size: cover;
+  position: relative;
+
+  @media screen and (max-width: 767px) {
+    .container {
+      max-width: 600px;
+    }
+  }
+
+  &__main {
+
+    @media screen and (max-width: 610px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &:after {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url("../img/img.png") bottom 45% right 20px no-repeat;
+    width: 55%;
+    height: 150%;
+
+    @media screen and (max-width: 1420px) {
+      background: url("../img/img.png") bottom 45% right -100px no-repeat;
+    }
+
+    @media screen and (max-width: 770px) {
+      background: url("../img/img.png") bottom 45% right -180px no-repeat;
+    }
+
+    @media screen and (max-width: 610px) {
+      display: none;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    @media screen and (max-width: 991px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__send {
+    margin-top: 10px;
+    outline: none;
+    width: 150px;
+    height: 50px;
+    background: #E31E25;
+    border-radius: 4px;
+    border: 1px solid #E31E25;
+    font-family: "TT Norms";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+    &:hover {
+      outline: none;
+      background: #b5191f;
+      border: 1px solid #b5191f;
+    }
+
+    &:active, &:focus {
+      outline: none;
+      border: 1px solid #b5191f;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 100%;
+    }
+  }
+
+  &__circle {
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: #E31E25;
+
+    i {
+      color: #EEEEEE;
+    }
+  }
+
+  &__active {
+    z-index: 10;
+    white-space: nowrap;
+    background: #FFFFFF;
+    border-radius: 4px;
+    margin-right: 10px;
+    border: 1px solid #FFFFFF;
+    transition: 0.5s;
+
+    p {
+      margin: 10px;
+      font-family: "TT Norms";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      color: #1A1A18;
+    }
+
+    &:hover {
+      background: #FCE8E9;
+      border: 1px solid #E31E25;
+    }
+
+    &:active {
+      background: #E31E25;
+      border: 1px solid #E31E25;
+    }
+  }
+
+  &__icon {
+    transform: scaleX(-1);
+    color: #E31E25;
+    margin-right: 8px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    @media screen and (max-width: 610px) {
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 425px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    font-family: "TT Norms";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1A18;
+  }
+
+  &__default {
+    white-space: nowrap;
+    background: #FFFFFF;
+    border-radius: 4px;
+    margin-right: 10px;
+    border: 1px solid #FFFFFF;
+    transition: 0.5s;
+
+    p {
+      margin: 10px;
+      font-family: "TT Norms";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 20px;
+      color: #1A1A18;
+    }
+  }
+
+  &__button {
+    margin: 40px 0 0 0;
+    width: 211px;
+    height: 60px;
+    background: white;
+    border: 2px solid #E31E25;
+    border-radius: 4px;
+    outline: none;
+    transition: 0.5s;
+
+    font-family: "TT Norms";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #E31E25;
+
+    @media screen and (max-width: 425px) {
+      width: 100%;
+    }
+
+    &:hover {
+      outline: none;
+      background: #FCE8E9;
+    }
+
+    &:active, &:focus {
+      outline: none;
+      background: #E31E25;
+      color: white;
+    }
+  }
+}
+
+.modal-title {
+  margin: 24px 42px 10px 20px;
+  font-family: "TT Norms";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: #1A1A18;
+}
+
+.modal-header {
+  background: #F1F2F2;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  input {
+    outline: none;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 50px;
+    padding-left: 15px;
+    background: #F1F2F2;
+    border: 1px solid #99A2AD;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    font-family: "TT Norms";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #99A2AD;
+  }
+}
+
+.form-group {
+  display: block;
+  margin-bottom: 15px;
+
+}
+
+.form-group input {
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.form-group label {
+  position: relative;
+  cursor: pointer;
+  font-family: "TT Norms";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #898989;
+}
+
+.form-group label:before {
+  content: '';
+  -webkit-appearance: none;
+  background: #F1F2F2;
+  border: 1px solid #898989;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.form-group input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid #898989;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
